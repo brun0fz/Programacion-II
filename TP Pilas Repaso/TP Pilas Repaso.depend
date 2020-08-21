@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1598019707 source:c:\users\brunofz\documents\tp pilas repaso\main.c
+	<stdio.h>
+	<stdlib.h>
+

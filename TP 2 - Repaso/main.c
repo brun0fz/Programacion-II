@@ -15,10 +15,6 @@ stPersona* copiarArreglo(stPersona persona[], int validosp, int *validosg, char 
 void MostrarArregloPersonas(stPersona arraypersonas[], int validos);
 int copiarArregloalt (stPersona persona[], int validosp, stPersona **g, char genero);
 
-
-
-
-
 int main()
 {
 
@@ -34,7 +30,7 @@ int main()
 
     int validosG=0;
 
-    validosG=copiarArregloalt(arraypersonas, validos, genero, 'm');
+    validosG=copiarArregloalt(arraypersonas, validos, &genero, 'm');
 
     MostrarArregloPersonas(genero, validosG);
 
@@ -161,7 +157,37 @@ int copiarArregloalt (stPersona persona[], int validosp, stPersona **g, char gen
     return validosg;
 }
 
+int posEdadMenor(stPersona personas[], int validos, int pos)
+{
+    int posmenor=pos;
+    int edadmenor=personas[pos].edad;
+    int index;
 
+    for(index=pos+1; index<validos; index++)
+    {
+        if(personas[index].edad < edadmenor)
+        {
+            posmenor=index;
+            edadmenor=personas[index].edad;
+
+        }
+    }
+    return posmenor;
+}
+
+void ordSelecEdad(stPersona personas[], int validos)
+{
+    stPersona aux;
+    int posmenor;
+
+    for(int i=0; i<validos-1; i++)
+    {
+        posmenor=posEdadMenor(personas, validos, i);
+        aux=personas[i];
+        personas[i]=personas[posmenor];
+        personas[posmenor]=aux;
+    }
+}
 
 
 
