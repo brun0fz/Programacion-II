@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct {
+      char nombre[30];
+      char genero;
+      int edad;
+}persona;
+
+
+int main()
+{
+
+    persona arraypersonas[30];
+
+
+
+    return 0;
+}
+

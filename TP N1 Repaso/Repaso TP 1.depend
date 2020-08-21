@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1597776856 source:c:\users\brunofz\documents\github\programacion-ii\repaso tp 1\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1597953717 source:c:\users\brunofz\documents\github\programacion-ii\tp n1 repaso ej 1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<time.h>
+	<strings.h>
+
