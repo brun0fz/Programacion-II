@@ -3,27 +3,28 @@
 
 int factorial (int x);
 int potencia(int b, int e);
+
 void mostrarArreglo(int A[], int cantidad, int i);
 void mostrarArregloInvertido(int A[], int cantidad, int i);
+int arregloCapicua(int A[], int i, int u);
 int sumarArreglo(int A[], int validos, int i);
 int sumarArregloAlt(int A[], int validos, int i);
 int buscarMenorArray(int A[], int validos, int i);
+int buscarArray(int A[], int validos, int i, int dato);
 
-
-
+int arAbrirBuscarMenor(char archivo[]);
+int arBuscarMenor(FILE *Buffer);
+void cargarArchivo(char archivo[]);
+void arAbrirMostrar(char archivo[]);
+void arMostrar(FILE *Buffer);
 
 int main()
 {
-    /*FILE *buffer = fopen("arInt.dat", "ab");
-    int x=6;
-    fwrite(&x, sizeof(int), 1,buffer);
-    fclose(buffer);*/
-
-    printf("%d", buscarMenorAr("arInt.dat", 0));
-
-
     return 0;
 }
+
+///EJ 01
+/////////////////////////////////////////////////////////////////////
 
 int factorial (int x)
 {
@@ -41,6 +42,9 @@ int factorial (int x)
     return rta;
 }
 
+///EJ 02
+/////////////////////////////////////////////////////////////////////
+
 int potencia(int b, int e)
 {
     int rta;
@@ -57,6 +61,9 @@ int potencia(int b, int e)
     return rta;
 }
 
+///EJ 03
+/////////////////////////////////////////////////////////////////////
+
 /*void mostrarArreglo(int A[], int cantidad, int i) ///Se rompe si el arreglo esta vacio.
 {
     if(i == cantidad-1)
@@ -70,6 +77,8 @@ int potencia(int b, int e)
     }
 }*/
 
+
+
 void mostrarArreglo(int A[], int cantidad, int i) ///No se rompe si el arreglo esta vacio.
 {
     if(i<cantidad)
@@ -78,6 +87,9 @@ void mostrarArreglo(int A[], int cantidad, int i) ///No se rompe si el arreglo e
         mostrarArreglo(A, cantidad, i+1);
     }
 }
+
+///EJ 04
+/////////////////////////////////////////////////////////////////////
 
 void mostrarArregloInvertido(int A[], int cantidad, int i)
 {
@@ -88,20 +100,51 @@ void mostrarArregloInvertido(int A[], int cantidad, int i)
     }
 }
 
-/*int arregloCapicua(int A[], int validos, int i)
+///EJ 05
+/////////////////////////////////////////////////////////////////////
+
+/*int arregloCapicua(int A[],int validos, int i, int u) ///pedorrus
 {
-    int flag;
+    int flag=1;
 
-    if(A[i]!=A[validos-1])
+    if(i<validos/2)
     {
-        flag=0
-    }
-    else
-    {
-        arregloCapicua(A, validos, i+1);
+        if(A[i]!=A[u])
+        {
+            flag=0
+        }
+        else
+        {
+            flag=arregloCapicua(A,validos,i+1, u-1);
 
+        }
     }
+
+    return flag;
 }*/
+
+int arregloCapicua(int A[], int i, int u)
+{
+    int flag=1;
+
+    if(i<u)
+    {
+        if(A[i]!=A[u])
+        {
+            flag=0;
+        }
+        else
+        {
+            flag=arregloCapicua(A, i+1, u-1);
+
+        }
+    }
+
+    return flag;
+}
+
+///EJ 06
+/////////////////////////////////////////////////////////////////////
 
 int sumarArreglo(int A[], int validos, int i)
 {
@@ -132,6 +175,9 @@ int sumarArregloAlt(int A[], int validos, int i)
     return rta;
 }
 
+///EJ 07
+/////////////////////////////////////////////////////////////////////
+
 int buscarMenorArray(int A[], int validos, int i)
 {
     int menor;
@@ -151,36 +197,8 @@ int buscarMenorArray(int A[], int validos, int i)
     return menor;
 }
 
-int buscarMenorAr(char filename[], int pos)
-{
-    int aux;
-    int menor;
-
-    FILE *buffer = fopen(filename, "rb");
-
-    if(buffer)
-    {
-        if(fread(&aux,sizeof(int),1,buffer)==1)
-        {
-            menor=aux;
-        }
-        else
-        {
-            fseek(buffer,sizeof(int)*pos, SEEK_SET);
-            fread(&aux,sizeof(int),1,buffer);
-            menor=buscarMenorAr(filename, pos+1);
-
-            if(aux<menor)
-            {
-                menor=aux;
-            }
-        }
-
-        fclose(buffer);
-    }
-
-    return menor;
-}
+///EJ 12
+/////////////////////////////////////////////////////////////////////
 
 int buscarArray(int A[], int validos, int i, int dato)
 {
@@ -199,4 +217,165 @@ int buscarArray(int A[], int validos, int i, int dato)
 
     }
     return flag;
+}
+
+///Cargar Archivo
+/////////////////////////////////////////////////////////////////////
+
+void cargarArchivo(char archivo[])
+{
+    char com='s';
+    int num=0;
+
+    FILE *Buffer = fopen(archivo, "ab");
+
+    if(Buffer)
+    {
+        while(com =='s')
+        {
+            printf("\nIngrese un numero: ");
+            scanf("%d", &num);
+
+            fwrite(&num, sizeof(int), 1, Buffer);
+
+            printf("Desea cargar otro numero? [s/n]: ");
+            fflush(stdin);
+            scanf("%c", &com);
+        }
+        fclose(Buffer);
+    }
+}
+
+///EJ 08
+/////////////////////////////////////////////////////////////////////
+
+int arAbrirBuscarMenor(char archivo[])
+{
+    int menor;
+
+    FILE *Buffer = fopen(archivo, "rb");
+
+    if(Buffer)
+    {
+        menor = arBuscarMenor(Buffer);
+
+        fclose(Buffer);
+    }
+    else
+    {
+        printf("\nError al abrir el archivo.\n");
+    }
+
+    return menor;
+}
+
+
+int arBuscarMenor(FILE *Buffer)
+{
+    int dato;
+    int menor;
+
+    if(fread(&dato, sizeof(int),1,Buffer)==0)
+    {
+        fseek(Buffer, -1*sizeof(int), SEEK_END);
+        fread(&menor, sizeof(int), 1, Buffer);
+    }
+    else
+    {
+        menor=arBuscarMenor(Buffer);
+        if(dato<menor)
+        {
+            menor=dato;
+        }
+    }
+    return menor;
+}
+
+///EJ 09
+/////////////////////////////////////////////////////////////////////
+
+/*void arAbrirInvertir(char archivo[])
+{
+    FILE *Buffer = fopen(archivo, "rb");
+
+    if(Buffer)
+    {
+        arInvertir(Buffer);
+
+        fclose(Buffer);
+    }
+    else
+    {
+        printf("\nError al abrir el archivo.\n");
+    }
+}
+
+void arInvertir(FILE *Buffer)
+{
+    if(fread(&dato,sizeof(int), 1, Buffer)!=0)
+    {
+
+
+    }
+}*/
+
+///EJ 10
+/////////////////////////////////////////////////////////////////////
+
+void arAbrirMostrar(char archivo[])
+{
+    FILE *Buffer = fopen(archivo, "rb");
+
+    if(Buffer)
+    {
+        arMostrar(Buffer);
+
+        fclose(Buffer);
+    }
+    else
+    {
+        printf("\nError al abrir el archivo.\n");
+    }
+}
+
+/*void arMostrar(FILE *Buffer)
+{
+    int dato;
+
+    if(fread(&dato, sizeof(int),1,Buffer) == 0)
+    {
+       printf("[%d]", dato);
+    }
+    else
+    {
+        arMostrar(Buffer);
+        printf("[%d]", dato);
+    }
+}*/
+
+void arMostrar(FILE *Buffer)
+{
+    int dato;
+
+    if(fread(&dato, sizeof(int),1,Buffer) > 0)
+    {
+        arMostrar(Buffer);
+        printf("[%d]", dato);
+    }
+}
+
+///EJ 11
+/////////////////////////////////////////////////////////////////////
+
+void mostrarCharInvertido(char dato)
+{
+    printf("Ingrese un caracter (* para finalizar): ");
+    fflush(stdin);
+    scanf("%c", &dato);
+
+    if(dato!='*')
+    {
+        mostrarCharInvertido(dato);
+        printf("[%c]\n", dato);
+    }
 }
