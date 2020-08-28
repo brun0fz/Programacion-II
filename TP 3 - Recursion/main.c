@@ -17,6 +17,11 @@ int arBuscarMenor(FILE *Buffer);
 void cargarArchivo(char archivo[]);
 void arAbrirMostrar(char archivo[]);
 void arMostrar(FILE *Buffer);
+int arCuentaRegistro(FILE *Buffer);
+void arAbrirInvertir(char archivo[], int i, int u);
+void arInvertir(FILE *Buffer, int i, int u);
+
+
 
 int main()
 {
@@ -294,13 +299,25 @@ int arBuscarMenor(FILE *Buffer)
 ///EJ 09
 /////////////////////////////////////////////////////////////////////
 
-/*void arAbrirInvertir(char archivo[])
+int arCuentaRegistro(FILE *Buffer)
 {
-    FILE *Buffer = fopen(archivo, "rb");
+    int cant=0;
+
+    fseek(Buffer, 0, SEEK_END);
+    cant=ftell(Buffer)/sizeof(int);
+
+    return cant;
+}
+
+
+void arAbrirInvertir(char archivo[], int i, int u)
+{
+    FILE *Buffer = fopen(archivo, "ab");
 
     if(Buffer)
     {
-        arInvertir(Buffer);
+        u=arCuentaRegistro(Buffer);
+        arInvertir(Buffer, i,u);
 
         fclose(Buffer);
     }
@@ -310,14 +327,28 @@ int arBuscarMenor(FILE *Buffer)
     }
 }
 
-void arInvertir(FILE *Buffer)
+void arInvertir(FILE *Buffer, int i, int u)
 {
-    if(fread(&dato,sizeof(int), 1, Buffer)!=0)
+    int num;
+    int num2;
+
+    if(i<u)
     {
+        fseek(Buffer,i*sizeof(int),SEEK_SET);
+        fread(&num, sizeof(int), 1, Buffer);
 
+        fseek(Buffer,u*sizeof(int),SEEK_SET);
+        fread(&num2, sizeof(int), 1, Buffer);
 
+        fseek(Buffer, i*sizeof(int),SEEK_SET);
+        fwrite(&num2, sizeof(int), 1, Buffer);
+
+        fseek(Buffer, u*sizeof(int),SEEK_SET);
+        fwrite(&num, sizeof(int), 1, Buffer);
+
+        arInvertir(Buffer, i+1,u-1);
     }
-}*/
+}
 
 ///EJ 10
 /////////////////////////////////////////////////////////////////////
