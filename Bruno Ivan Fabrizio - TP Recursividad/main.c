@@ -9,21 +9,27 @@ void mostrarFibonacciRecursivo();
 
 int main()
 {
-    int Rta;
+    int T;
 
-    //printf("FUNCION ITERATIVA\n\n");
+    printf("FUNCION ITERATIVA\n\n");
 
-    //Rta=fibonacciIterativo(46);
-    //printf("[%d]\n", Rta);
+    printf("Ingrese un termino: ");
+    scanf("%d", &T);
 
-    printf("FUNCION RECURSIVA\n\n");
+    T=fibonacciIterativo(T);
+    printf("[%d]\n", T);
 
-    Rta=fibonacciRecursivo(10);
-    printf("[%d]\n", Rta);
+    printf("\nFUNCION RECURSIVA\n\n");
 
-    //mostrarFibonacciIterativo();
+    printf("Ingrese un termino: ");
+    scanf("%d", &T);
 
-    //mostrarFibonacciRecursivo();
+    T=fibonacciRecursivo(T);
+    printf("[%d]\n", T);
+
+    mostrarFibonacciIterativo();
+
+    mostrarFibonacciRecursivo();
 
     return 0;
 }
@@ -33,17 +39,13 @@ long int fibonacciIterativo(int T)
 {
     long int A=0, B=1, N;
 
-    if(T==1)
+    if(T<=1)
     {
-        N=0;
-    }
-    else if(T==2)
-    {
-        N=1;
+        N=T;
     }
     else
     {
-        for (int i=3; i<=T; i++)
+        for (int i=2; i<=T; i++)
         {
             N = A + B;
             A = B;
@@ -59,12 +61,12 @@ void mostrarFibonacciIterativo()
 {
     int T=0;
 
-    printf("FUNCION ITERATIVA\n\n");
+    printf("\n\nFUNCION ITERATIVA\n\n");
 
-    printf("Ingrese una termino: ");
+    printf("Ingrese un termino: ");
     scanf("%d", &T);
 
-    for(int i=1; i<=T; i++)
+    for(int i=0; i<=T; i++)
     {
         printf("[%ld]",fibonacciIterativo(i));
     }
@@ -75,7 +77,7 @@ void mostrarFibonacciIterativo()
 ///Funcion recursiva 1.a
 long int fibonacciRecursivo(int T)
 {
-    return (T == 1 || T == 2) ? T-1 : fibonacciRecursivo(T-2) + fibonacciRecursivo(T-1);
+    return (T == 0 || T == 1) ? T : fibonacciRecursivo(T-1) + fibonacciRecursivo(T-2);
 }
 
 ///Funcion recursiva 1.b
@@ -83,12 +85,12 @@ void mostrarFibonacciRecursivo()
 {
     int T=0;
 
-    printf("FUNCION RECURSIVA\n\n");
+    printf("\n\nFUNCION RECURSIVA\n\n");
 
     printf("Ingrese un termino: ");
     scanf("%d", &T);
 
-    for (int i=1 ; i<=T; i++)
+    for (int i=0 ; i<=T; i++)
     {
         printf("[%ld]",fibonacciRecursivo(i));
     }
