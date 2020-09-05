@@ -9,25 +9,25 @@ void mostrarFibonacciRecursivo();
 
 int main()
 {
-    int T;
+   // int T;
 
-    printf("FUNCION ITERATIVA\n\n");
+   // printf("FUNCION ITERATIVA\n\n");
 
-    printf("Ingrese un termino: ");
-    scanf("%d", &T);
+   // printf("Ingrese un termino: ");
+   // scanf("%d", &T);
 
-    T=fibonacciIterativo(T);
-    printf("[%d]\n", T);
+    //T=fibonacciIterativo(T);
+   // printf("[%d]\n", T);
 
-    printf("\nFUNCION RECURSIVA\n\n");
+    //printf("\nFUNCION RECURSIVA\n\n");
 
-    printf("Ingrese un termino: ");
-    scanf("%d", &T);
+    //printf("Ingrese un termino: ");
+    //scanf("%d", &T);
 
-    T=fibonacciRecursivo(T);
-    printf("[%d]\n", T);
+   // T=fibonacciRecursivo(T);
+    //printf("[%d]\n", T);
 
-    mostrarFibonacciIterativo();
+    //mostrarFibonacciIterativo();
 
     mostrarFibonacciRecursivo();
 
