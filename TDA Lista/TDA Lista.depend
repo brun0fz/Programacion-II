@@ -1,13 +1,15 @@
 # depslib dependency file v1.0
-1599261819 source:d:\tup\programacion\github\programacion-ii\tda lista\main.c
-	<stdio.h>
-	<stdlib.h>
+1599355209 source:d:\tup\programacion\github\programacion-ii\tda lista\main.c
 	"libreria.h"
-
-1599261897 d:\tup\programacion\github\programacion-ii\tda lista\libreria.h
 	<stdio.h>
 	<stdlib.h>
+	<strings.h>
 
-1599261819 source:d:\tup\programacion\github\programacion-ii\tda lista\libreria.c
+1599354148 d:\tup\programacion\github\programacion-ii\tda lista\libreria.h
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+
+1599354309 source:d:\tup\programacion\github\programacion-ii\tda lista\libreria.c
 	"libreria.h"
 

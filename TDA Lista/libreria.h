@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <strings.h>
 
 ///Estructuras
 ////////////////////////////////////////////////////////
@@ -25,12 +26,15 @@ typedef struct _nodo
 ////////////////////////////////////////////////////////
 nodo *inicLista();
 nodo *crearNodo(persona dato);
-nodo *agregarNodoPpio(nodo *lista, nodo *nuevoNodo);
+nodo *agregarPpio(nodo *lista, nodo *nuevoNodo);
 nodo *agregarNodosPpio(nodo *lista);
-
 persona cargarPersona();
 void mostrarPersona(persona dato);
 void mostrarNodo(nodo *aux);
 void recorrerYmostrar(nodo *lista);
-
+nodo *buscarUltimo(nodo *lista);
+nodo *agregarFinal(nodo *lista, nodo *nuevonodo);
+nodo *agregarNodosFinal(nodo *lista);
+nodo *buscarNodo(nodo *lista, char nombre[]);
+////////////////////////////////////////////////////////
 #endif

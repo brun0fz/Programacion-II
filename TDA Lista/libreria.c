@@ -13,7 +13,7 @@ nodo *crearNodo(persona dato)
     return nuevo;
 }
 
-nodo *agregarNodoPpio(nodo *lista, nodo *nuevoNodo)
+nodo *agregarPpio(nodo *lista, nodo *nuevoNodo)
 {
     if(lista == NULL)
     {
@@ -33,14 +33,43 @@ nodo *agregarNodosPpio(nodo *lista)
 
     while(com=='s')
     {
-        lista=agregarNodoPpio(lista, crearNodo(cargarPersona()));
-
+        lista=agregarPpio(lista, crearNodo(cargarPersona()));
         fflush(stdin);
         printf("\nDesea cargar otra perona? [s/n]: ");
         scanf("%c", &com);
     }
     return lista;
 }
+
+/////////////////////////////////////////////////////////////////// Referencia
+/*
+void agregarNodoPpio(nodo **lista, nodo *nuevoNodo)
+{
+    if(*lista == NULL)
+    {
+        *lista = nuevoNodo;
+    }
+    else
+    {
+        nuevoNodo->siguiente = *lista;
+        *lista = nuevoNodo;
+    }
+}
+
+void agregarNodosPpio(nodo **lista)
+{
+    char com='s';
+
+    while(com=='s')
+    {
+        agregarNodoPpio(lista, crearNodo(cargarPersona()));
+        fflush(stdin);
+        printf("\nDesea cargar otra perona? [s/n]: ");
+        scanf("%c", &com);
+    }
+}
+*/
+//////////////////////////////////////////////////////////////////////////////
 
 persona cargarPersona()
 {
@@ -78,4 +107,85 @@ void recorrerYmostrar(nodo *lista)
         mostrarNodo(seg);
         seg=seg->siguiente;
     }
+}
+
+nodo *buscarUltimo(nodo *lista)
+{
+    nodo *seg=lista;
+    if(seg)
+    {
+        while(seg->siguiente !=NULL)
+        {
+            seg=seg->siguiente;
+        }
+    }
+    return seg;
+}
+
+nodo *agregarFinal(nodo *lista, nodo *nuevonodo)
+{
+    if(lista == NULL)
+    {
+        lista = nuevonodo;
+    }
+    else
+    {
+        nodo *ultimo=buscarUltimo(lista);
+        ultimo->siguiente=nuevonodo;
+    }
+    return lista;
+}
+
+nodo *agregarNodosFinal(nodo *lista)
+{
+    char com='s';
+
+    while(com=='s')
+    {
+        lista=agregarFinal(lista, crearNodo(cargarPersona()));
+        fflush(stdin);
+        printf("\nDesea cargar otra perona? [s/n]: ");
+        scanf("%c", &com);
+    }
+    return lista;
+}
+
+nodo *buscarNodo(nodo *lista, char nombre[])
+{
+    nodo *seg=lista;
+
+    while((seg !=NULL) && (strcmp(nombre, seg->dato.nombre) !=0))
+    {
+        seg=seg->siguiente;
+    }
+    return seg;
+}
+
+nodo *borrarNodo(nodo *lista, char nombre[])
+{
+    nodo *seg;
+    nodo *ante;
+
+    if((lista != NULL) && (strcmp(nombre, lista->dato.nombre)==0))
+    {
+        nodo *aux=lista;
+        lista=lista->siguiente;
+        free(aux);
+    }
+    else
+    {
+        seg=lista;
+        while((seg !=NULL) && (strcmp(nombre, seg->dato.nombre) !=0))
+        {
+            ante=seg;
+            seg=seg->siguiente;
+        }
+
+        if(seg!=NULL)
+        {
+            ante->siguiente=seg->siguiente;
+            free(seg);
+        }
+    }
+    return lista;
 }
