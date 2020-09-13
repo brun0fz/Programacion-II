@@ -31,13 +31,17 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="libreria.c">
+		<Unit filename="listaEnlazada.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="libreria.h" />
+		<Unit filename="listaEnlazada.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="persona.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="persona.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>
