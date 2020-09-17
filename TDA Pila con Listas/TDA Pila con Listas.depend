@@ -1,0 +1,45 @@
+# depslib dependency file v1.0
+1600185826 source:c:\users\brunofz\documents\tda pila con listas\main.c
+	<stdio.h>
+	<stdlib.h>
+	"TDAPila.h"
+
+1600185615 source:c:\users\brunofz\documents\tda pila con listas\listaenlazada.c
+	"listaEnlazada.h"
+
+1600185502 c:\users\brunofz\documents\tda pila con listas\listaenlazada.h
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+
+1600182803 c:\users\brunofz\documents\tda pila con listas\tdapila.h
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	"listaEnlazada.h"
+
+1600185624 source:c:\users\brunofz\documents\tda pila con listas\tdapila.c
+	"TDAPila.h"
+
+1600271854 source:d:\tup\programacion\github\programacion-ii\tda pila con listas\listaenlazada.c
+	"listaEnlazada.h"
+
+1600271399 d:\tup\programacion\github\programacion-ii\tda pila con listas\listaenlazada.h
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+
+1600301604 source:d:\tup\programacion\github\programacion-ii\tda pila con listas\main.c
+	<stdio.h>
+	<stdlib.h>
+	"TDAPila.h"
+
+1600265395 d:\tup\programacion\github\programacion-ii\tda pila con listas\tdapila.h
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	"listaEnlazada.h"
+
+1600266653 source:d:\tup\programacion\github\programacion-ii\tda pila con listas\tdapila.c
+	"TDAPila.h"
+
