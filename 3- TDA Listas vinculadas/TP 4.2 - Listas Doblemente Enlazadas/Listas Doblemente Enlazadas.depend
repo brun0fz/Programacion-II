@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1600355045 source:d:\tup\programacion\github\programacion-ii\listas doblemente enlazadas\main.c
+	<stdio.h>
+	<stdlib.h>
+	"TDALista2.h"
+
+1600354277 source:d:\tup\programacion\github\programacion-ii\listas doblemente enlazadas\tdalista2.c
+	"TDALista2.h"
+
+1600354190 d:\tup\programacion\github\programacion-ii\listas doblemente enlazadas\tdalista2.h
+	<stdio.h>
+	<stdlib.h>
+

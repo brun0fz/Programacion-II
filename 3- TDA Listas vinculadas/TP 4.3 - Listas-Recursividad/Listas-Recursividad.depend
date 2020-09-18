@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1600444366 source:c:\users\brunofz\documents\listas-recursividad\main.c
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	<conio.h>
+	"listaEnlazada.h"
+
+1600375657 c:\users\brunofz\documents\listas-recursividad\listaenlazada.h
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	"persona.h"
+
+1600261260 source:c:\users\brunofz\documents\listas-recursividad\listaenlazada.c
+	"listaEnlazada.h"
+
+1600095040 c:\users\brunofz\documents\listas-recursividad\persona.h
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+
+1600263360 source:c:\users\brunofz\documents\listas-recursividad\persona.c
+	"persona.h"
+
