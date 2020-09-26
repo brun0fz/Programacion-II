@@ -83,6 +83,20 @@ void agregarFinal(nodo **pLista, nodo *nuevonodo)
 
 }
 
+nodo * agregarFinalpSimple(nodo *pLista, nodo *nuevonodo)
+{
+    if(pLista == NULL)
+    {
+        pLista = nuevonodo;
+    }
+    else
+    {
+        nodo *ultimo=buscarUltimo(pLista);
+        ultimo->siguiente=nuevonodo;
+    }
+    return pLista;
+}
+
 ////////////////////////////////////////////////////////
 
 nodo *buscarNodo(nodo **pLista, char nombre[])

@@ -7,13 +7,14 @@
 
 #include "persona.h"
 
-#define Lista nodo*
+//#define Lista nodo*
 
 
 ////////////////////////////////////////////////////////
 typedef struct _nodo
 {
     persona dato;
+
     struct _nodo * siguiente;
 } nodo;
 

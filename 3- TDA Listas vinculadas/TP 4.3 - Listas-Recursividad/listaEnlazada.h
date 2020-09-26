@@ -29,6 +29,8 @@ void mostrarLista(nodo **pLista);
 void eliminarPrimerNodo(nodo **pLista);
 void eliminarUltimoNodo(nodo **pLista);
 void desvincularPrimero(nodo **pLista);
+nodo * agregarFinalpSimple(nodo *pLista, nodo *nuevonodo);
+
 
 ///struct Persona
 void mostrarNodo(nodo *aux);

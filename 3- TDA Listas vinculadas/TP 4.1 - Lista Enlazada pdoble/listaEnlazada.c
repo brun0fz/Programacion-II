@@ -12,8 +12,11 @@ void inicLista(nodo **pLista)
 nodo *crearNodo(persona dato)
 {
     nodo *nuevo = (nodo*)malloc(sizeof(nodo));
+
     nuevo->dato = dato;
+
     nuevo->siguiente = NULL;
+
     return nuevo;
 }
 

@@ -205,11 +205,11 @@ int buscarMenorArray(int A[], int validos, int i)
 ///EJ 12
 /////////////////////////////////////////////////////////////////////
 
-int buscarArray(int A[], int validos, int i, int dato)
+int buscarArray(int A[], int cantidad, int i, int dato)
 {
     int flag=0;
 
-    if(i<validos)
+    if(i<cantidad)
     {
         if(A[i]==dato)
         {

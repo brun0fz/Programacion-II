@@ -218,7 +218,7 @@ void mostrarListaDoble(nodoDoble *listaDoble)
 
 int PrimerNodoDoble(nodoDoble *listaDoble)
 {
-    int primero=0;
+    int primero;
 
     if(listaDoble)
     {
