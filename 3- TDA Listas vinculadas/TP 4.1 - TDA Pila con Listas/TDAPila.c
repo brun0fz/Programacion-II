@@ -1,16 +1,20 @@
 #include "TDAPila.h"
 
-
+///INICIALIZAR PILA
+/////////////////////////////////////////////////////
 void inicPila(nodo **pila)
 {
     lInicLista(pila);
 }
 
+
+///PILA VACIA
+/////////////////////////////////////////////////////
 int pilavacia(nodo** pila)
 {
     int flag=1;
 
-    if(*pila)
+    if(*pila!=NULL)
     {
         flag=0;
     }
@@ -18,6 +22,9 @@ int pilavacia(nodo** pila)
     return flag;
 }
 
+
+///TOPE DE LA PILA
+/////////////////////////////////////////////////////
 int tope(nodo** pila)
 {
     int tope;
@@ -26,19 +33,29 @@ int tope(nodo** pila)
     {
         tope=(*pila)->dato;
     }
+
     return tope;
 }
 
+
+///DESAPILAR
+/////////////////////////////////////////////////////
 int desapilar(nodo** pila)
 {
     return lDesvincularPrimero(pila);
 }
 
+
+///APILAR
+/////////////////////////////////////////////////////
 void apilar(nodo** pila, int dato)
 {
     lAgregarPpio(pila, lCrearNodo(dato));
 }
 
+
+///LEER
+/////////////////////////////////////////////////////
 void leer(nodo** pila)
 {
     int dato;
@@ -49,10 +66,12 @@ void leer(nodo** pila)
     apilar(pila, dato);
 }
 
+
+///MOSTRAR
+/////////////////////////////////////////////////////
 void mostrar(nodo **pila)
 {
     printf("\nTope\n");
     lMostrarLista(pila);
     printf("Base\n");
 }
-

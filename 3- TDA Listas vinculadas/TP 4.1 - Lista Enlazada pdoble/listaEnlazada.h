@@ -27,8 +27,8 @@ void agregarFinal(nodo **pLista, nodo *nuevonodo);
 nodo *buscarUltimo(nodo *pLista);
 void borrarTodaLaLista(nodo **pLista);
 void mostrarLista(nodo **pLista);
-void eliminarPrimerNodo(nodo **pLista);
-void eliminarUltimoNodo(nodo **pLista);
+void borrarPrimerNodo(nodo **pLista);
+void borrarUltimoNodo(nodo **pLista);
 void desvincularPrimero(nodo **pLista);
 
 ///struct Persona

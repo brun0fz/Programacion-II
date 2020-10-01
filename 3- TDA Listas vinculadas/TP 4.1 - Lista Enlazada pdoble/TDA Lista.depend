@@ -80,3 +80,27 @@
 	<conio.h>
 	"listaEnlazada.h"
 
+1600263360 source:d:\tup\programacion\github\programacion-ii\3- tda listas vinculadas\tp 4.1 - lista enlazada pdoble\persona.c
+	"persona.h"
+
+1600095040 d:\tup\programacion\github\programacion-ii\3- tda listas vinculadas\tp 4.1 - lista enlazada pdoble\persona.h
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+
+1601407487 source:d:\tup\programacion\github\programacion-ii\3- tda listas vinculadas\tp 4.1 - lista enlazada pdoble\main.c
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	<conio.h>
+	"listaEnlazada.h"
+
+1601405577 d:\tup\programacion\github\programacion-ii\3- tda listas vinculadas\tp 4.1 - lista enlazada pdoble\listaenlazada.h
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	"persona.h"
+
+1601406379 source:d:\tup\programacion\github\programacion-ii\3- tda listas vinculadas\tp 4.1 - lista enlazada pdoble\listaenlazada.c
+	"listaEnlazada.h"
+

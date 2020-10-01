@@ -174,6 +174,7 @@ int main()
     return 0;
 }
 
+///AGREGAR NODOS AL PRINCIPIO
 ////////////////////////////////////////////////////////
 
 void SubProgramaAgregarNodosPpio(nodo **pLista)
@@ -189,6 +190,7 @@ void SubProgramaAgregarNodosPpio(nodo **pLista)
     }
 }
 
+///AGREGAR NODOS AL FINAL
 ////////////////////////////////////////////////////////
 
 void SubProgramaAgregarNodosFinal(nodo **pLista)
@@ -204,6 +206,7 @@ void SubProgramaAgregarNodosFinal(nodo **pLista)
     }
 }
 
+///BUSCAR UN NODO
 ////////////////////////////////////////////////////////
 
 void subprogramaBusqeudaDeUnNodo(nodo **lista)
@@ -227,6 +230,7 @@ void subprogramaBusqeudaDeUnNodo(nodo **lista)
     }
 }
 
+///BORRAR UN NODO
 ////////////////////////////////////////////////////////
 
 void subprogramaBorrarUnNodo(nodo **lista)
@@ -240,6 +244,7 @@ void subprogramaBorrarUnNodo(nodo **lista)
     borrarNodo(lista, nombre);
 }
 
+///CREAR LISTA ORDENADA
 ////////////////////////////////////////////////////////
 
 void subprogramaCrearListaOrdenada(nodo **lista)
@@ -255,6 +260,7 @@ void subprogramaCrearListaOrdenada(nodo **lista)
     }
 }
 
+///SUMAR DATOS EN UNA LISTA
 ////////////////////////////////////////////////////////
 
 int SubProgramaSumarEdades(nodo *lista)
@@ -276,14 +282,12 @@ int SubProgramaSumarEdades(nodo *lista)
 ////////////////////////////////////////////////////////
 
 ///01 - Hacer un programa que lea de un archivo datos y los inserte en una lista.
-
+/*
 void subProgramaAgregarPersona(nodo **lista, persona p)
 {
     agregarPpio(lista, crearNodo(p));
-
 }
-
-
+*/
 void InsertarDesdeArchivo(char fileName[], nodo **lista)
 {
     FILE *buffer = fopen(fileName, "rb");
@@ -294,8 +298,10 @@ void InsertarDesdeArchivo(char fileName[], nodo **lista)
     {
         while(fread(&aux, sizeof(persona), 1, buffer)>0)
         {
-            subProgramaAgregarPersona(lista, aux);
+            agregarPpio(lista, crearNodo(aux));
+            //subProgramaAgregarPersona(lista, aux);
         }
+
         fclose(buffer);
     }
 }
@@ -319,6 +325,7 @@ void InsertarDesdeArchivoOrd(char fileName[], nodo **lista)
         {
             subProgramaAgregarPersonaOrd(lista, aux);
         }
+
         fclose(buffer);
     }
 }
@@ -327,18 +334,11 @@ void InsertarDesdeArchivoOrd(char fileName[], nodo **lista)
 
 int BuscarEnLista(nodo **pLista, char nombre[])
 {
-    nodo *nodobuscado;
-    int flag;
+    int flag=0;
 
-    nodobuscado=buscarNodo(pLista, nombre);
-
-    if(nodobuscado)
+    if(buscarNodo(pLista, nombre))
     {
         flag=1;
-    }
-    else
-    {
-        flag=0;
     }
 
     return flag;
@@ -394,10 +394,41 @@ void invertirLista(nodo **pLista)
     while(seg!=NULL)
     {
         siguiente=seg->siguiente;
+
         seg->siguiente=ante;
+
         ante=seg;
+
         seg=siguiente;
     }
 
     *pLista=ante;
+}
+
+nodo * invertirLista(nodo * lista)
+{
+    /// la idea es extraer el primero de la lista original
+    /// y luego agregarlo al principio de la nueva lista
+    /// retornamos el puntero al inicio de la nueva lista
+    /// para pisar la referencia del main
+
+    nodo * listaInvertida=NULL;
+    nodo * aux;
+
+    while(lista!=NULL)
+    {
+        // aux ahora es el primero de la lista
+        aux=lista;
+
+        //avanzas en la lista
+        lista=lista->siguiente;
+
+
+        aux->siguiente=NULL;
+
+        /// lo agregamos al principio de la nueva lista invertida
+        listaInvertida = agregarAlPpio(listaInvertida, aux);
+    }
+
+    return listaInvertida;
 }

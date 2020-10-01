@@ -28,26 +28,27 @@ int main()
     return 0;
 }
 
-///EJ 01
+///EJ 01 FACTORIAL
 /////////////////////////////////////////////////////////////////////
 
 int factorial (int x)
 {
     int rta;
 
-    if(x==0)
+    if(x==0) ///CONDICION DE CORTE
     {
-        rta=1;
+        rta=1; ///SOLUCION TRIVIAL O CASO BASE
     }
     else
     {
-        rta=x*factorial(x-1);
+        rta=x*factorial(x-1); ///LLAMADA RECURSIVA ||| ACERCAMIENTO A LA CONDICION DE CORTE
+        ///EXPRESION DE LA SOLUCION TOTAL
     }
 
     return rta;
 }
 
-///EJ 02
+///EJ 02 POTENCIA
 /////////////////////////////////////////////////////////////////////
 
 int potencia(int b, int e)
@@ -66,7 +67,7 @@ int potencia(int b, int e)
     return rta;
 }
 
-///EJ 03
+///EJ 03 MOSTRAR ARREGLO RECURSIVO
 /////////////////////////////////////////////////////////////////////
 
 /*void mostrarArreglo(int A[], int cantidad, int i) ///Se rompe si el arreglo esta vacio.
@@ -93,46 +94,26 @@ void mostrarArreglo(int A[], int cantidad, int i) ///No se rompe si el arreglo e
     }
 }
 
-///EJ 04
+///EJ 04 MOSTRAR ARREGLO RECURSIVO INVERTIDO
 /////////////////////////////////////////////////////////////////////
 
 void mostrarArregloInvertido(int A[], int cantidad, int i)
 {
-    if(i<cantidad)
+    if(i<cantidad) ///VERIFICAMOS QUE NO NOS HAYAMOS CAIDO DEL ARREGLO
     {
         mostrarArreglo(A, cantidad, i+1);
         printf("[%d]=%d\n", i, A[i]);
     }
 }
 
-///EJ 05
+///EJ 05 ARREGLO CAPICUA RECRUSIVO
 /////////////////////////////////////////////////////////////////////
-
-/*int arregloCapicua(int A[],int validos, int i, int u) ///pedorrus
-{
-    int flag=1;
-
-    if(i<validos/2)
-    {
-        if(A[i]!=A[u])
-        {
-            flag=0
-        }
-        else
-        {
-            flag=arregloCapicua(A,validos,i+1, u-1);
-
-        }
-    }
-
-    return flag;
-}*/
 
 int arregloCapicua(int A[], int i, int u)
 {
     int flag=1;
 
-    if(i<u)
+    if(i<u) ///VERIFICAMOS SI NO NOS CRUZAMOS EN EL ARREGLO
     {
         if(A[i]!=A[u])
         {
@@ -148,21 +129,20 @@ int arregloCapicua(int A[], int i, int u)
     return flag;
 }
 
-///EJ 06
+///EJ 06 SUMAR ARREGLO RECURSIVO
 /////////////////////////////////////////////////////////////////////
 
 int sumarArreglo(int A[], int validos, int i)
 {
     int rta;
 
-    if(i == validos) //Condicion de corte
+    if(i == validos) ///SI I ES IGUAL A VALIDOS QUIERE DECIR QUE NOS CAIMOS DEL ARREGLO, ENTONCES LA SUMA ES 0
     {
         rta=0; //Solucion trivial
     }
     else
     {
-        rta=A[i];
-        rta+=sumarArreglo(A, validos, i+1);
+        rta=A[i]+sumarArreglo(A, validos, i+1);
     }
 
     return rta;
@@ -172,7 +152,7 @@ int sumarArregloAlt(int A[], int validos, int i)
 {
     int rta=0;
 
-    if(i<validos)
+    if(i<validos) ///I MENOR QUE VALIDOS SIGNIFICA QUE TRABAJO MIENTRAS HAY ARREGLO
     {
         rta=A[i]+sumarArreglo(A, validos, i+1);
     }
@@ -180,14 +160,14 @@ int sumarArregloAlt(int A[], int validos, int i)
     return rta;
 }
 
-///EJ 07
+///EJ 07 BUSCAR MENOR ARREGLO
 /////////////////////////////////////////////////////////////////////
 
 int buscarMenorArray(int A[], int validos, int i)
 {
     int menor;
 
-    if(i == validos-1)
+    if(i == validos-1) /// I == VALIDOS -1 SIGNIFICA QUE VA A PASAR ALGO SI ESTOY EN LA ULTIMA POSICION
     {
         menor=A[i];
     }
@@ -202,7 +182,7 @@ int buscarMenorArray(int A[], int validos, int i)
     return menor;
 }
 
-///EJ 12
+///EJ 12 BUSCAR EN ARREGLO
 /////////////////////////////////////////////////////////////////////
 
 int buscarArray(int A[], int cantidad, int i, int dato)
@@ -217,7 +197,7 @@ int buscarArray(int A[], int cantidad, int i, int dato)
         }
         else
         {
-            flag=buscarArray(A,validos,i+1,dato);
+            flag=buscarArray(A,cantidad,i+1,dato);
         }
 
     }
@@ -251,7 +231,7 @@ void cargarArchivo(char archivo[])
     }
 }
 
-///EJ 08
+///EJ 08 BUSCAR MENOR EN UN ARCHIVO
 /////////////////////////////////////////////////////////////////////
 
 int arAbrirBuscarMenor(char archivo[])
@@ -296,7 +276,7 @@ int arBuscarMenor(FILE *Buffer)
     return menor;
 }
 
-///EJ 09
+///EJ 09 INVERTIR ARCHIVO
 /////////////////////////////////////////////////////////////////////
 
 int arCuentaRegistro(FILE *Buffer)
@@ -350,7 +330,7 @@ void arInvertir(FILE *Buffer, int i, int u)
     }
 }
 
-///EJ 10
+///EJ 10 MOSTRAR ARCHIVO INVERTIDO
 /////////////////////////////////////////////////////////////////////
 
 void arAbrirMostrar(char archivo[])
@@ -369,21 +349,6 @@ void arAbrirMostrar(char archivo[])
     }
 }
 
-/*void arMostrar(FILE *Buffer)
-{
-    int dato;
-
-    if(fread(&dato, sizeof(int),1,Buffer) == 0)
-    {
-       printf("[%d]", dato);
-    }
-    else
-    {
-        arMostrar(Buffer);
-        printf("[%d]", dato);
-    }
-}*/
-
 void arMostrar(FILE *Buffer)
 {
     int dato;
@@ -395,7 +360,7 @@ void arMostrar(FILE *Buffer)
     }
 }
 
-///EJ 11
+///EJ 11 MOSTRAR CHARS INVERTIDOS INGRESADOS POR TECLADO
 /////////////////////////////////////////////////////////////////////
 
 void mostrarCharInvertido(char dato)

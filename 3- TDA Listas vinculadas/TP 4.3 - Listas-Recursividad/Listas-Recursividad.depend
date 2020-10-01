@@ -47,3 +47,27 @@
 	<conio.h>
 	"listaEnlazada.h"
 
+1600452954 source:c:\users\brunofz\desktop\tp 4.3 - listas-recursividad\listaenlazada.c
+	"listaEnlazada.h"
+
+1600452840 c:\users\brunofz\desktop\tp 4.3 - listas-recursividad\listaenlazada.h
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	"persona.h"
+
+1600095040 c:\users\brunofz\desktop\tp 4.3 - listas-recursividad\persona.h
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+
+1600263360 source:c:\users\brunofz\desktop\tp 4.3 - listas-recursividad\persona.c
+	"persona.h"
+
+1601491639 source:c:\users\brunofz\desktop\tp 4.3 - listas-recursividad\main.c
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	<conio.h>
+	"listaEnlazada.h"
+

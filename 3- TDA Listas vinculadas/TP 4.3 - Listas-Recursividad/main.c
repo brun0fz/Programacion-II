@@ -12,8 +12,8 @@ void SubProgramaAgregarNodosFinal(nodo **pLista);
 
 void mostrarListaInvertidaRecursivo(nodo *pLista);
 int sumarListaRecursivo(nodo *lista);
-void MostrarPosParRecursivo(nodo *lista, int pos);
-void otroMuestraPosParRecursivo(nodo * lista);
+void MostrarPosParRecursivo(nodo * lista);
+void otroMuestraPosParRecursivo(nodo *lista, int pos);
 nodo * invertirListaRecursivo (nodo * lista);
 nodo * borrarNodoRecursivo(nodo *pLista, char nombre[]);
 nodo* insertarEnOrdenRecursivo(nodo * lista, nodo * nuevo);
@@ -47,6 +47,7 @@ int main()
     return 0;
 }
 
+
 ////////////////////////////////////////////////////////
 
 void SubProgramaAgregarNodosPpio(nodo **pLista)
@@ -79,7 +80,8 @@ void SubProgramaAgregarNodosFinal(nodo **pLista)
 
 ///Recursivo
 
-//1. Recorrer una lista y mostrarla en forma invertida.
+///MOSTRAR LISTA INVERTIDA RECURSIVO
+////////////////////////////////////////////////////////
 
 void mostrarListaInvertidaRecursivo(nodo *lista)
 {
@@ -91,13 +93,18 @@ void mostrarListaInvertidaRecursivo(nodo *lista)
 }
 
 
-//2. Sumar los elementos de una lista.
+///SUMAR LISTA RECURSIVO
+////////////////////////////////////////////////////////
 
 int sumarListaRecursivo(nodo *lista)
 {
-    int suma=0;
+    int suma;
 
-    if(lista!=NULL)
+    if(lista==NULL)
+    {
+        suma=0;
+    }
+    else
     {
         suma=lista->dato.edad+sumarListaRecursivo(lista->siguiente);
     }
@@ -105,16 +112,26 @@ int sumarListaRecursivo(nodo *lista)
     return suma;
 }
 
-int sumarListaRecursivo2(nodo *lista)
-{
-    int suma=0;
+///MOSTRAR POSICION PAR RECURSIVO
+////////////////////////////////////////////////////////
 
-    return (lista!=NULL) ? lista->dato.edad+sumarListaRecursivo(lista->siguiente) : suma;
+void MostrarPosParRecursivo(nodo * lista)
+{
+    if(lista!=NULL)
+    {
+        lista= lista->siguiente;
+
+        if(lista!=NULL)
+        {
+            mostrarNodo(lista);
+            MostrarPosParRecursivo(lista->siguiente);
+        }
+    }
 }
 
-//3. Mostrar los elementos de una lista ubicados en una posición par.
 
-void MostrarPosParRecursivo(nodo *lista, int pos)
+///MOSTRAR POSICION PAR RECURSIVO PEDORRO
+void otroMuestraPosParRecursivo(nodo *lista, int pos)
 {
     if(lista!=NULL)
     {
@@ -122,42 +139,16 @@ void MostrarPosParRecursivo(nodo *lista, int pos)
         {
             mostrarNodo(lista);
         }
-        MostrarPosParRecursivo(lista->siguiente, pos+1);
+       otroMuestraPosParRecursivo(lista->siguiente, pos+1);
     }
 }
 
-void otroMuestraPosParRecursivo(nodo * lista)
-{
-    if(lista!=NULL)
-    {
-        lista= lista->siguiente;
-        // avanzo por cada etapa 2 nodos... si existe el segundo (seria la posicion par)
-        // lo muestro...
-        // y llamo a la recursividad
-        if(lista!=NULL)
-        {
-            mostrarNodo(lista);
-            otroMuestraPosParRecursivo(lista->siguiente);
-        }
-    }
-}
 
-//4. Invertir una lista cambiando los vínculos.
+///INVERTIR UNA LISTA RECURSIVO
+////////////////////////////////////////////////////////
 
 nodo * invertirListaRecursivo (nodo * lista)
 {
-    /*
-        si esta vacia, retorno NULL
-        si tiene un solo nodo, retorna lista
-        si tiene mas de un nodo, tomo el 1er nodo, invierto lo que sigue y
-        lo agrego al final de la lista invertida
-
-        nos vamos a ayudar con la funcion agregar al final
-
-        primero tengo que desvicular al nodo de la lista
-        OJO no perder las referencias...
-    */
-
     nodo * primero=NULL;
 
     if(lista!=NULL)
@@ -174,7 +165,8 @@ nodo * invertirListaRecursivo (nodo * lista)
     return lista;
 }
 
-//5. Borrar un nodo de una lista.
+///BORRAR NODO RECURSIVO
+////////////////////////////////////////////////////////
 
 nodo *borrarNodoRecursivo(nodo *lista, char nombre[])
 {
@@ -197,11 +189,11 @@ nodo *borrarNodoRecursivo(nodo *lista, char nombre[])
     return lista;
 }
 
-//6. Insertar un nodo en una lista en forma recursiva (manteniendo el orden de forma creciente).
+///INSERTAR NODO EN ORDEN RECURSIVO
+////////////////////////////////////////////////////////
 
 nodo* insertarEnOrdenRecursivo(nodo *lista, nodo *nuevo)
 {
-
     if(lista == NULL)
     {
         lista=nuevo;
@@ -218,5 +210,6 @@ nodo* insertarEnOrdenRecursivo(nodo *lista, nodo *nuevo)
             lista->siguiente = insertarEnOrdenRecursivo(lista->siguiente, nuevo);
         }
     }
+
     return lista;
 }

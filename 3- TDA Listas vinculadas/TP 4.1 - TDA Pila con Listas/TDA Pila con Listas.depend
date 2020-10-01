@@ -43,3 +43,25 @@
 1600266653 source:d:\tup\programacion\github\programacion-ii\tda pila con listas\tdapila.c
 	"TDAPila.h"
 
+1600271854 source:d:\tup\programacion\github\programacion-ii\3- tda listas vinculadas\tp 4.1 - tda pila con listas\listaenlazada.c
+	"listaEnlazada.h"
+
+1600271399 d:\tup\programacion\github\programacion-ii\3- tda listas vinculadas\tp 4.1 - tda pila con listas\listaenlazada.h
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+
+1600301604 source:d:\tup\programacion\github\programacion-ii\3- tda listas vinculadas\tp 4.1 - tda pila con listas\main.c
+	<stdio.h>
+	<stdlib.h>
+	"TDAPila.h"
+
+1600265395 d:\tup\programacion\github\programacion-ii\3- tda listas vinculadas\tp 4.1 - tda pila con listas\tdapila.h
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	"listaEnlazada.h"
+
+1600365139 source:d:\tup\programacion\github\programacion-ii\3- tda listas vinculadas\tp 4.1 - tda pila con listas\tdapila.c
+	"TDAPila.h"
+

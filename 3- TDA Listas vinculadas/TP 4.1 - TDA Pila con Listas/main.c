@@ -27,7 +27,7 @@ int main()
 
 
 
-     printf("LISTA");
+    printf("LISTA");
     lMostrarLista(&lista);
 
 
@@ -71,3 +71,38 @@ void pilaToLista(Pila *p, nodo **lista)
     }
 }
 
+void lBorrarNodosMenores(nodo **pLista, int dato)
+{
+    nodo *seg;
+    nodo *ante;
+    nodo *aux=*pLista;
+
+    if(*pLista!=NULL)
+    {
+        while(aux!=NULL)
+        {
+            if((*pLista)->dato < dato)
+            {
+                nodo *aux=*pLista;
+                *pLista=(*pLista)->siguiente;
+                free(aux);
+            }
+            else
+            {
+                seg=*pLista;
+                while((seg !=NULL) && seg->dato > dato)
+                {
+                    ante=seg;
+                    seg=seg->siguiente;
+                }
+
+                if(seg!=NULL)
+                {
+                    ante->siguiente=seg->siguiente;
+                    free(seg);
+                }
+            }
+            aux=aux->siguiente;
+        }
+    }
+}

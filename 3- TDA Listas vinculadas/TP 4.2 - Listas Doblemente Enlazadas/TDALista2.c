@@ -18,17 +18,18 @@ nodoDoble *crearNodoDoble(int dato)
 
 void agregarPpioDoble(nodoDoble **listaDoble, nodoDoble *nuevo)
 {
+    //Si la lista esta vacia, lista apunta a nuevo nodo
     if(*listaDoble==NULL)
     {
         *listaDoble=nuevo;
     }
     else
     {
-        nuevo->siguiente=*listaDoble; ///El nuevo->siguiente apunta al que estaba en primer lugar
+        nuevo->siguiente=*listaDoble; //el nuevo nodo ahora apunta al primero por siguiente
 
-        (*listaDoble)->anterior=nuevo; ///El que se corrio un lugar, apunta al nuevo por anterior
+        (*listaDoble)->anterior=nuevo; //el nodo que estaba apunta al nuevo por anterior
 
-        *listaDoble=nuevo; ///la lista apunta al nuevo nodo agregado
+        *listaDoble=nuevo; //la lista ahora apunta al nuevo
     }
 }
 
@@ -67,37 +68,38 @@ nodoDoble *buscarUltimoDoble(nodoDoble *listaDoble)
 
 void agregarEnOrdenDoble(nodoDoble **listaDoble, nodoDoble *nuevo)
 {
-    if(*listaDoble==NULL)///Caso 1: Lista vacia, agrego al principio
+    if(*listaDoble==NULL)///Caso 1: Si la lista esta vacia, se enlaza con el nuevo dato
     {
         *listaDoble=nuevo;
     }
     else
     {
-        if(nuevo->dato < (*listaDoble)->dato) ///Caso  2: lista con datos, el dato va al principio
+        if(nuevo->dato < (*listaDoble)->dato) ///Caso  2: Si el dato a insertar es menor que el primer dato, lo agregamos al principio
         {
             agregarPpioDoble(listaDoble, nuevo);
         }
         else
         {
-            nodoDoble *seg = (*listaDoble)->siguiente;
-            while(seg!=NULL && seg->dato < nuevo->dato)
+            nodoDoble *seg = (*listaDoble)->siguiente;//bajamos la lista a una variable auxiliar para no modificarla
+
+            while(seg!=NULL && nuevo->dato > seg->dato)//Buscamos el dato mientras que la lista no este vacia o el dato a insertar sea mayor que el de la lista
             {
                 seg=seg->siguiente;
             }
 
-            if(seg!=NULL) ///Caso 3: El dato va entre medio de dos nodos
+            if(seg!=NULL) ///Caso 3: El dato va entre medio de dos nodos, verificamos que no nos hayamos caido de la lista
             {
-                nodoDoble *ante=seg->anterior;
+                nodoDoble *ante=seg->anterior; //bajamos el nodo anterior a una variable
 
-                ante->siguiente=nuevo;
+                ante->siguiente=nuevo; //ante siguiente se enalza con el nuevo nodo
 
-                nuevo->anterior=ante;
+                nuevo->anterior=ante; //el nuevo nodo por anterior se enlaza con ante
 
-                nuevo->siguiente=seg;
+                nuevo->siguiente=seg; //nuevo nodo siguiente se enlaza con seg que es el nodo actual
 
-                seg->anterior=nuevo;
+                seg->anterior=nuevo; //seg por anterior se enlaza al nodo nuevo
             }
-            else ///caso 4: El dato va al final
+            else ///caso 4: si no encontramos el hueco para ubicar el dato, quiere decir que nos caimos de la lista y el nuevo dato se inserta al final
             {
                 agregarFinalDoble(listaDoble, nuevo);
             }
@@ -111,13 +113,13 @@ void borrarNodoDoble(nodoDoble **pListaDoble, int dato)
 
     if(*pListaDoble!=NULL)
     {
-        if((*pListaDoble)->dato == dato)
+        if((*pListaDoble)->dato == dato) //Si el nodo a borrar es el primero, bajamos el nodo a una variable, salteamos el nodo y lo borramos
         {
             nodoDoble *aBorrar=*pListaDoble;
 
             *pListaDoble=(*pListaDoble)->siguiente;
 
-            if(*pListaDoble!=NULL)
+            if(*pListaDoble!=NULL) //si la lista quedo con al menos un dato, tenemos que enlazar por anterior a NULL
             {
                 (*pListaDoble)->anterior=NULL;
             }
@@ -126,20 +128,23 @@ void borrarNodoDoble(nodoDoble **pListaDoble, int dato)
         }
         else
         {
-            seg=(*pListaDoble)->siguiente;
-            while((seg !=NULL) && seg->dato != dato)
+            seg=(*pListaDoble)->siguiente;//bajamos la variable a una auxiliar para no modificar la lista
+
+            while((seg !=NULL) && seg->dato != dato) //recorremos la lista mientra que no este vacia y el dato sea distinto
             {
                 seg=seg->siguiente;
             }
 
-            if(seg!=NULL)
+            if(seg!=NULL)//si encontramos el dato a borrar
             {
-                nodoDoble *ante = seg->anterior;
-                ante->siguiente = seg->siguiente;
+                nodoDoble *ante = seg->anterior; //bajamos el nodo anterior a una variable
+
+                ante->siguiente = seg->siguiente; // salteamos el nodo a aborrar
+
                 if(seg->siguiente != NULL)
                 {
-                    nodoDoble *sig = seg->siguiente;
-                    sig->anterior=ante;
+                    nodoDoble *proximo = seg->siguiente;
+                    proximo->anterior=ante;
                 }
 
                 free(seg);
