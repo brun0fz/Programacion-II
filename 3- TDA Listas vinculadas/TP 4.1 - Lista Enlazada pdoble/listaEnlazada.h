@@ -29,7 +29,7 @@ void borrarTodaLaLista(nodo **pLista);
 void mostrarLista(nodo **pLista);
 void borrarPrimerNodo(nodo **pLista);
 void borrarUltimoNodo(nodo **pLista);
-void desvincularPrimero(nodo **pLista);
+nodo *desvincularPrimerNodo(nodo **pLista);
 
 ///struct Persona
 void mostrarNodo(nodo *aux);

@@ -311,16 +311,59 @@ void borrarUltimoNodo(nodo **pLista)
 ///DESVINCULAR PRIMER NODO
 ////////////////////////////////////////////////////////
 
-void desvincularPrimero(nodo **pLista)
+nodo *desvincularPrimerNodo(nodo **pLista)
 {
-    nodo *primero=NULL;
+    nodo *aDesvincular=*pLista;
 
     if(*pLista)
     {
-        primero=*pLista;
-
         *pLista=(*pLista)->siguiente;
 
-        primero->siguiente=NULL;
+        aDesvincular->siguiente=NULL;
     }
+
+    return aDesvincular;
+}
+
+///DESVINCULAR UN NODO POR PARAMETRO
+////////////////////////////////////////////////////////
+nodo *desvincularNodo(nodo **pLista, char nombre[])
+{
+    nodo *aDesvincular=NULL;
+
+    if(*pLista!=NULL)
+    {
+        if((strcmp(nombre, (*pLista)->dato.nombre)==0))
+        {
+            aDesvincular=*pLista;
+
+            *pLista=(*pLista)->siguiente;
+
+            aDesvincular->siguiente=NULL;
+        }
+        else
+        {
+            nodo *seg=*pLista;
+            nodo *ante;
+
+            while((seg !=NULL) && (strcmp(nombre, seg->dato.nombre) !=0))
+            {
+                ante=seg;
+
+                seg=seg->siguiente;
+            }
+
+
+            if(seg!=NULL)
+            {
+                aDesvincular=seg;
+
+                ante->siguiente=seg->siguiente;
+
+                aDesvincular->siguiente=NULL;
+            }
+        }
+    }
+
+    return aDesvincular;
 }

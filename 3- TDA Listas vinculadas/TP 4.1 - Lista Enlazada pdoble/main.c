@@ -27,6 +27,8 @@ int BuscarEnLista(nodo **lista, char nombre[]);
 void intercalarEnOrden(nodo **listaA, nodo **listaB, nodo **listaC);
 
 void invertirLista(nodo **pLista);
+nodo * invertirLista2(nodo * lista);
+
 
 
 ////////////////////////////////////////////////////////
@@ -385,50 +387,14 @@ void intercalarEnOrden(nodo **listaA, nodo **listaB, nodo **listaC)
 
 ///06 Invertir los elementos de una lista redireccionando solamente los punteros. (No se deben crear nuevos nodos)
 
-void invertirLista(nodo **pLista)
+void invertirLista(nodo ** pLista)
 {
-    nodo *seg=*pLista;
-    nodo *ante=NULL;
-    nodo *siguiente;
-
-    while(seg!=NULL)
-    {
-        siguiente=seg->siguiente;
-
-        seg->siguiente=ante;
-
-        ante=seg;
-
-        seg=siguiente;
-    }
-
-    *pLista=ante;
-}
-
-nodo * invertirLista(nodo * lista)
-{
-    /// la idea es extraer el primero de la lista original
-    /// y luego agregarlo al principio de la nueva lista
-    /// retornamos el puntero al inicio de la nueva lista
-    /// para pisar la referencia del main
-
-    nodo * listaInvertida=NULL;
     nodo * aux;
 
-    while(lista!=NULL)
+    while(*pLista!=NULL)
     {
-        // aux ahora es el primero de la lista
-        aux=lista;
+        aux=desvincularPrimerNodo(pLista);
 
-        //avanzas en la lista
-        lista=lista->siguiente;
-
-
-        aux->siguiente=NULL;
-
-        /// lo agregamos al principio de la nueva lista invertida
-        listaInvertida = agregarAlPpio(listaInvertida, aux);
+        agregarPpio(pLista, aux);
     }
-
-    return listaInvertida;
 }

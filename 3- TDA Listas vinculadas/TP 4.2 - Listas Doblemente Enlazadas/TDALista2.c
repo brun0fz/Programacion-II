@@ -221,3 +221,5 @@ void mostrarListaDoble(nodoDoble *listaDoble)
         seg=seg->siguiente;
     }
 }
+
+

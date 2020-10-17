@@ -104,3 +104,27 @@
 1601406379 source:d:\tup\programacion\github\programacion-ii\3- tda listas vinculadas\tp 4.1 - lista enlazada pdoble\listaenlazada.c
 	"listaEnlazada.h"
 
+1600263360 source:d:\tup\segundo cuatrimestre\programacion ii\github\programacion-ii\3- tda listas vinculadas\tp 4.1 - lista enlazada pdoble\persona.c
+	"persona.h"
+
+1600095040 d:\tup\segundo cuatrimestre\programacion ii\github\programacion-ii\3- tda listas vinculadas\tp 4.1 - lista enlazada pdoble\persona.h
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+
+1602047687 source:d:\tup\segundo cuatrimestre\programacion ii\github\programacion-ii\3- tda listas vinculadas\tp 4.1 - lista enlazada pdoble\main.c
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	<conio.h>
+	"listaEnlazada.h"
+
+1601617538 d:\tup\segundo cuatrimestre\programacion ii\github\programacion-ii\3- tda listas vinculadas\tp 4.1 - lista enlazada pdoble\listaenlazada.h
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	"persona.h"
+
+1602047485 source:d:\tup\segundo cuatrimestre\programacion ii\github\programacion-ii\3- tda listas vinculadas\tp 4.1 - lista enlazada pdoble\listaenlazada.c
+	"listaEnlazada.h"
+
