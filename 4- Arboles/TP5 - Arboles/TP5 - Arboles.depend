@@ -1,0 +1,27 @@
+# depslib dependency file v1.0
+1602047485 source:c:\users\brunofz\documents\tp5 - arboles\listaenlazada.c
+	"listaEnlazada.h"
+
+1603396831 c:\users\brunofz\documents\tp5 - arboles\listaenlazada.h
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+
+1603415340 source:c:\users\brunofz\documents\tp5 - arboles\main.c
+	<stdio.h>
+	<stdlib.h>
+	"listaEnlazada.h"
+
+1602047485 source:d:\tup\segundo cuatrimestre\programacion ii\github\programacion-ii\4- arboles\tp5 - arboles\listaenlazada.c
+	"listaEnlazada.h"
+
+1603396831 d:\tup\segundo cuatrimestre\programacion ii\github\programacion-ii\4- arboles\tp5 - arboles\listaenlazada.h
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+
+1603486862 source:d:\tup\segundo cuatrimestre\programacion ii\github\programacion-ii\4- arboles\tp5 - arboles\main.c
+	<stdio.h>
+	<stdlib.h>
+	"listaEnlazada.h"
+
