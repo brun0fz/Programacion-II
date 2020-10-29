@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1603621780 source:c:\users\brunofz\documents\estructurascompuestas\main.c
+	<stdio.h>
+	<stdlib.h>
+	"listaEnlazada.h"
+
+1603613712 c:\users\brunofz\documents\estructurascompuestas\listaenlazada.h
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+	"notaAlumno.h"
+
+1603613536 c:\users\brunofz\documents\estructurascompuestas\notaalumno.h
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+
+1603618583 source:c:\users\brunofz\documents\estructurascompuestas\notaalumno.c
+	"notaAlumno.h"
+
+1603613781 source:c:\users\brunofz\documents\estructurascompuestas\listaenlazada.c
+	"listaEnlazada.h"
+
