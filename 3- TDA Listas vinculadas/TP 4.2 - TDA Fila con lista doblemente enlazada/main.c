@@ -8,8 +8,8 @@ int main()
     Fila filita;
     inicFila(&filita);
 
-    agregar(&filita, 1);
-    agregar(&filita, 2);
+    //agregar(&filita, 1);
+    //agregar(&filita, 2);
 
     leer(&filita);
 
@@ -24,9 +24,6 @@ int main()
     mostrar(&filita);
 
     printf("\nPRIMERO: %d\n", primero(&filita));
-
-
-
 
     return 0;
 }

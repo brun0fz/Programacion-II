@@ -49,7 +49,7 @@ int main()
     system("pause");
     system("cls");
 
-   // pasarDeADLToArchivoDeAprobados(ADL, validos);
+    // pasarDeADLToArchivoDeAprobados(ADL, validos);
 
     printf("Archivo de aprobados\n\n");
 
@@ -156,24 +156,7 @@ int cargarADL(celda ADL[], int dim)
 
     while(com=='s' && validos < dim)
     {
-        printf("\n---------------\n");
-        printf("NOTA: ");
-        scanf("%d", &nuevo.nota);
-
-        printf("LEGAJO: ");
-        scanf("%d", &nuevo.legajo);
-
-        printf("NOMBRE Y APELLIDO: ");
-        fflush(stdin);
-        gets(nuevo.nombreApe);
-
-        printf("MATERIA: ");
-        fflush(stdin);
-        gets(nuevo.materia);
-
-        printf("ID MATERIA: ");
-        scanf("%d", &nuevo.idMateria);
-        printf("---------------\n");
+        nuevo=cargarRegistroArchivo();
 
         validos=alta(ADL, nuevo, validos);
 
@@ -264,7 +247,6 @@ int pasarDeArchivoToADL(char filename[], celda ADL[], int dim)
     registroArchivo aux;
 
     int validos=0;
-
 
     if(buffer)
     {

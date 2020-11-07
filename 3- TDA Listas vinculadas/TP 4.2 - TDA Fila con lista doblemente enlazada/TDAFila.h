@@ -10,7 +10,7 @@ typedef struct
 {
     nodoDoble* inicio;
     nodoDoble* Fin;
-}Fila;
+} Fila;
 
 void inicFila(Fila* pFila);
 

@@ -36,3 +36,23 @@
 1600366149 source:d:\tup\programacion\github\programacion-ii\3- tda listas vinculadas\tp 4.2 - tda fila con lista doblemente enlazada\tdalista2.c
 	"TDALista2.h"
 
+1604743549 source:d:\tup\segundo cuatrimestre\programacion ii\github\programacion-ii\3- tda listas vinculadas\tp 4.2 - tda fila con lista doblemente enlazada\tdafila.c
+	"TDAFila.h"
+
+1604743546 d:\tup\segundo cuatrimestre\programacion ii\github\programacion-ii\3- tda listas vinculadas\tp 4.2 - tda fila con lista doblemente enlazada\tdafila.h
+	<stdio.h>
+	<stdlib.h>
+	"TDALista2.h"
+
+1600366149 d:\tup\segundo cuatrimestre\programacion ii\github\programacion-ii\3- tda listas vinculadas\tp 4.2 - tda fila con lista doblemente enlazada\tdalista2.h
+	<stdio.h>
+	<stdlib.h>
+
+1600464427 source:d:\tup\segundo cuatrimestre\programacion ii\github\programacion-ii\3- tda listas vinculadas\tp 4.2 - tda fila con lista doblemente enlazada\tdalista2.c
+	"TDALista2.h"
+
+1604744658 source:d:\tup\segundo cuatrimestre\programacion ii\github\programacion-ii\3- tda listas vinculadas\tp 4.2 - tda fila con lista doblemente enlazada\main.c
+	<stdio.h>
+	<stdlib.h>
+	"TDAFila.h"
+

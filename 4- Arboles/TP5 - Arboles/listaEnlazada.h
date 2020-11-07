@@ -5,24 +5,14 @@
 #include <stdlib.h>
 #include <strings.h>
 
+#include "persona.h"
 
-//#define Lista nodo
-
-typedef struct
-{
-    int legajo;
-    char nombre[20];
-    int edad;
-} persona;
-////////////////////////////////////////////////////////
 typedef struct _nodo
 {
     persona dato;
-
     struct _nodo * siguiente;
-} nodo;
 
-////////////////////////////////////////////////////////
+} nodo;
 
 void inicLista(nodo **pLista);
 nodo *crearNodo(persona dato); ///struct persona

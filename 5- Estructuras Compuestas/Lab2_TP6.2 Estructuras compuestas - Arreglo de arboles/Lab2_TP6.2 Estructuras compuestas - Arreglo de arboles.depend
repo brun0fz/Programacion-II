@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1604607742 source:c:\users\brunofz\documents\lab2_tp6.2 estructuras compuestas - arreglo de arboles\animales.c
+	"animales.h"
+
+1604607500 c:\users\brunofz\documents\lab2_tp6.2 estructuras compuestas - arreglo de arboles\animales.h
+	<stdio.h>
+	<stdlib.h>
+	<strings.h>
+
+1604608924 source:c:\users\brunofz\documents\lab2_tp6.2 estructuras compuestas - arreglo de arboles\main.c
+	<stdio.h>
+	<stdlib.h>
+	"arboles.h"
+	"animales.h"
+
+1604607539 c:\users\brunofz\documents\lab2_tp6.2 estructuras compuestas - arreglo de arboles\arboles.h
+	"animales.h"
+
+1604607729 source:c:\users\brunofz\documents\lab2_tp6.2 estructuras compuestas - arreglo de arboles\arboles.c
+	"arboles.h"
+
