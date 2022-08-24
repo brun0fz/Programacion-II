@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1502826175 source:c:\users\caroarchu.carolina\desktop\tsp program 2\ejerc 1 parcial\tp1 repaso 2\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1503415979 source:c:\users\caroarchu.carolina\desktop\tsp program 2\ejerc 1 parcial\tp1 repaso arreglos\main.c
+	<stdio.h>
+	<stdlib.h>
+	"time.h"
+
+1628879243 source:c:\users\carol\documents\tsp\tsp program 2\un 1 y 2 repaso\tp1 repaso (arr,func,punt) corr\main.c
+	<stdio.h>
+	<stdlib.h>
+	"time.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
