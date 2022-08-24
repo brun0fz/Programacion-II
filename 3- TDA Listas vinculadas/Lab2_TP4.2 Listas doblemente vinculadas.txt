@@ -1,0 +1,16 @@
+﻿UTN – FR Mar del Plata - Técnico Universitario en Programación
+Programación II y Laboratorio II
+Trabajo Práctico N° 4.2:  Lista Doblemente Enlazada 
+Codifique las funciones básicas que dan funcionamiento a la Lista Doblemente Enlazada que figuran en el apunte teórico compartido en el Campus.
+1. Modificar la función borrarNodo() de listas simples y transformarla para el caso de una lista doblemente vinculada.
+2. Crear una función recursiva que determine si una lista doblemente vinculada es capicúa. (Después de ver recursividad) 
+3. Dada una lista doblemente enlazada ordenada de enteros, eliminar el  nodo que se encuentra en el punto medio de la lista, si la cantidad de nodos es par, eliminar el inmediatamente superior.
+4. Crear el TDA Fila, implementada con listas doblemente vinculadas. Se puede trabajar con librerías separadas, una para la lista doble y otra para el TDA Fila.
+Conviene utilizar dos punteros, uno con la dirección de memoria del primer elemento y otro con la del último. Esas dos variables forman parte de una estructura (ojo, pensarlo bien!!). El comportamiento está dado por las siguientes funciones: 
+a) inicfila. 
+b) agregar //agrega un elemento al final de la lista 
+c) extraer //saca un elemento del principio de la lista 
+d) mostrar 
+e) leer 
+f) primero //similar a tope 
+g) filavacía //similar a pilavacia

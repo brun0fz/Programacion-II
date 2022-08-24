@@ -1,0 +1,9 @@
+﻿UTN – FR Mar del Plata - Técnico Universitario en Programación
+Programación II y Laboratorio II
+Trabajo Práctico N° 4.3: Listas con recursión
+1. Recorrer una lista y mostrarla en forma invertida. 
+2. Sumar los elementos de una lista. 
+3. Mostrar los elementos de una lista ubicados en una posición par. 
+4. Invertir una lista cambiando los vínculos. 
+5. Borrar un nodo de una lista. 
+6. Insertar un nodo en una lista en forma recursiva (manteniendo el orden de forma creciente).
