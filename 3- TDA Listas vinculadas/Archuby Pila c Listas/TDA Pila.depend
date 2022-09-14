@@ -1,0 +1,69 @@
+# depslib dependency file v1.0
+1505866140 source:c:\users\gustavo\documents\01 - catedras\03 - programacion 2 - laboratorio 2\trabajos practicos resoluciones\tp4-tdalistas\tda pila\lista.c
+	"lista.h"
+
+1505866140 c:\users\gustavo\documents\01 - catedras\03 - programacion 2 - laboratorio 2\trabajos practicos resoluciones\tp4-tdalistas\tda pila\lista.h
+	<stdio.h>
+	<stdlib.h>
+
+1505866183 source:c:\users\gustavo\documents\01 - catedras\03 - programacion 2 - laboratorio 2\trabajos practicos resoluciones\tp4-tdalistas\tda pila\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Pila.h"
+
+1475095574 c:\users\gustavo\documents\01 - catedras\03 - programacion 2 - laboratorio 2\trabajos practicos resoluciones\tp4-tdalistas\tda pila\pila.h
+	<stdio.h>
+	<stdlib.h>
+	"lista.h"
+
+1506117433 source:c:\users\gustavo\documents\01 - catedras\03 - programacion 2 - laboratorio 2\trabajos practicos resoluciones\tp4-tdalistas\tda pila\pila.c
+	"Pila.h"
+
+1631558400 source:c:\users\carol\documents\tsp\tsp program 2\un 4 listas simples, pila con listas y list c recursividad\tp4.3 pila hecho c listas corr\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Pila.h"
+
+1631288436 c:\users\carol\documents\tsp\tsp program 2\un 4 listas simples, pila con listas y list c recursividad\tp4.3 pila hecho c listas corr\pila.h
+	<stdio.h>
+	<stdlib.h>
+	"lista.h"
+
+1631300766 c:\users\carol\documents\tsp\tsp program 2\un 4 listas simples, pila con listas y list c recursividad\tp4.3 pila hecho c listas corr\lista.h
+	<stdio.h>
+	<stdlib.h>
+
+1631560302 source:c:\users\carol\documents\tsp\tsp program 2\un 4 listas simples, pila con listas y list c recursividad\tp4.3 pila hecho c listas corr\pila.c
+	"Pila.h"
+
+1631310186 source:c:\users\carol\documents\tsp\tsp program 2\un 4 listas simples, pila con listas y list c recursividad\tp4.3 pila hecho c listas corr\lista.c
+	"lista.h"
+
+1631843997 source:c:\users\carol\documents\tsp\tsp program 2\un 4 listas simples y pila c lista\archuby pila c listas\lista.c
+	"lista.h"
+
+1631843997 c:\users\carol\documents\tsp\tsp program 2\un 4 listas simples y pila c lista\archuby pila c listas\lista.h
+	<stdio.h>
+	<stdlib.h>
+
+1663109370 source:c:\users\carol\documents\tsp\tsp program 2\un 4 listas simples y pila c lista\archuby pila c listas\main.c
+	<stdio.h>
+	<stdlib.h>
+	"PilaConStructConLista.h"
+
+1633522636 c:\users\carol\documents\tsp\tsp program 2\un 4 listas simples y pila c lista\archuby pila c listas\pila.h
+	<stdio.h>
+	<stdlib.h>
+	"lista.h"
+
+1663109313 source:c:\users\carol\documents\tsp\tsp program 2\un 4 listas simples y pila c lista\archuby pila c listas\pila.c
+	"Pila.h"
+
+1663110284 c:\users\carol\documents\tsp\tsp program 2\un 4 listas simples y pila c lista\archuby pila c listas\pilaconstructconlista.h
+	<stdio.h>
+	<stdlib.h>
+	"lista.h"
+
+1663110488 source:c:\users\carol\documents\tsp\tsp program 2\un 4 listas simples y pila c lista\archuby pila c listas\pilaconstructconlista.c
+	"PilaConStructConLista.h"
+
